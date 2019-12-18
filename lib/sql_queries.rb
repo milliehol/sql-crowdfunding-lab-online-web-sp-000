@@ -29,7 +29,7 @@ ON projects.id = pledges.project_id GROUP BY projects.title
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_summed_amount
-   "SELECT users.name, users.age, SUM(pledges.amount)
+   "SELECT users.name, SUM(pledges.amount)
 FROM users
 INNER JOIN pledges
 ON users.id = pledges.user_id GROUP BY users.name ORDER by SUM(pledges.amount);"
